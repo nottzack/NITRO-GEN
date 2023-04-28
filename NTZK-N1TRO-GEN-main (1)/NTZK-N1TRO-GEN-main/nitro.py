@@ -2,6 +2,7 @@ import os
 import ctypes
 import random
 import requests
+import fade
 
 from time import sleep
 from colorama import Fore
@@ -45,27 +46,27 @@ def TWISTX7():
     generated = []
     valid = []
     invalid = []
-    print(fire(f"""
+    print(fade.pinkred(f"""
    
-        ╔═══════════════════════════╗ ╔═════════════════════╗
-        ║    ╔╗╔╔═╗═╗ ╦╦╦ ╦╔═╗      ║ ║ -- [.GG/NOXIUS] --  ║
-        ║    ║║║║ ║╔╩╦╝║║ ║╚═╗      ║ ║                     ║
-        ║    ╝╚╝╚═╝╩ ╚═╩╚═╝╚═╝      ║ ║     NTZK#3835       ║
-        ╚═══════════════════════════╝ ╚═════════════════════╝
-        ╔═══════════════════════════════════════════════════╗
-        ║                  [NITRO GEN]                      ║
-        ║            [!] DISCORD.GG/NOXIUS  [!]             ║
-        ╚═══════════════════════════════════════════════════╝
+           ╔═══════════════════════════╗ ╔═════════════════════╗
+           ║    ╔╗╔╔═╗═╗ ╦╦╦ ╦╔═╗      ║ ║ -- [.GG/NOXIUS] --  ║
+           ║    ║║║║ ║╔╩╦╝║║ ║╚═╗      ║ ║                     ║
+           ║    ╝╚╝╚═╝╩ ╚═╩╚═╝╚═╝      ║ ║     NTZK#3835       ║
+           ╚═══════════════════════════╝ ╚═════════════════════╝
+           ╔═══════════════════════════════════════════════════╗
+           ║                  [NITRO GEN]                      ║
+           ║            [!] DISCORD.GG/NOXIUS  [!]             ║
+           ╚═══════════════════════════════════════════════════╝
                                                                                        
-!· [TECAL X PARA GENRAR NITROS INFINITOS]
+--> [TECAL X PARA GENRAR NITROS INFINITOS]
 """))
 
     nitro_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
     length = 16
-    webhook_url = input(f"{Fore.YELLOW}--> Pon tu  Webhook De un canal de discord-> {Fore.RESET}")
-    usr_proxy = input(f"{Fore.YELLOW}--> Quieres usar Proxis? (y/n) -> {Fore.RESET}")
+    webhook_url = input(f"{Fore.BLUE}--> Pon tu  Webhook De un canal de discord-> {Fore.RESET}")
+    usr_proxy = input(f"{Fore.RED}--> Quieres usar Proxis? (Y/N) -> {Fore.RESET}")
     if usr_proxy == "y" or usr_proxy == "Y": 
-        proxiess = input(f"{Fore.YELLOW}--> Arastra el Archivo de las proxis aquí! -> {Fore.RESET}")
+        proxiess = input(f"{Fore.RED}--> Arastra el Archivo de las proxis aquí! -> {Fore.RESET}")
         def proxy():
             proxies = open(proxiess).read().split('\n')
             proxy = proxies[0]
@@ -75,7 +76,7 @@ def TWISTX7():
                 fp.truncate()
                 fp.writelines(lines[1:])
             return ({'http://': f'http://{proxy}', 'https://': f'https://{proxy}'})
-        amount = input(f"{Fore.YELLOW}-->Cuantos Discord Nitros quieres generar? ) -> {Fore.RESET}")
+        amount = input(f"{Fore.YELLOW}--> ¿Cuantos Discord Nitros quieres generar? ) -> {Fore.RESET}")
         if amount == "X" or amount == "x":
             try:
                 while True:
@@ -90,7 +91,7 @@ def TWISTX7():
                         generated.append(nitro)
                         ctypes.windll.kernel32.SetConsoleTitleW("Valid " + str(len(valid)) + "Invalid " + str(len(invalid)))
                     elif r.status_code == 429:
-                        print(f"{Fore.YELLOW} Demasidas Solictudes! |{Fore.RESET} {nitro} | {r.status_code}")
+                        print(f"{Fore.YELLOW} Demasidas Solictudes! |{Fore.red} {nitro} | {r.status_code}")
                     else:
                         print(f"{Fore.RED}Invalid |{Fore.RESET} {nitro} | {r.status_code}")
                         invalid.append(nitro)
@@ -102,7 +103,7 @@ def TWISTX7():
                         print("")
                         print("Results:")
                         print("")
-                        print(f"{Fore.YELLOW}Generated {Fore.RESET}-> {len(generated)}")
+                        print(f"{Fore.PINK}Generated {Fore.RESET}-> {len(generated)}")
                         print(f"{Fore.RED}Invalid {Fore.RESET}-> {len(invalid)}")
                         print(f"{Fore.GREEN}Valid {Fore.RESET}-> {len(valid)}")
                         print("")
@@ -125,7 +126,7 @@ def TWISTX7():
                         generated.append(nitro)
                         ctypes.windll.kernel32.SetConsoleTitleW("NITRO-GEN BY NTZK | Valid -> " + str(len(valid)) + " | INVALIDO -> " + str(len(invalid)))
                     elif r.status_code == 429:
-                        print(f"{Fore.YELLOW}Too Many Requests |{Fore.RESET} {nitro} | {r.status_code}")
+                        print(f"{Fore.YELLOW}Demasidas Solicitudes!|{Fore.RESET} {nitro} | {r.status_code}")
                         generated.append(nitro)
                     else:
                         print(f"{Fore.RED}Invalid |{Fore.RESET} {nitro} | {r.status_code}")
@@ -135,9 +136,9 @@ def TWISTX7():
                 print("")
                 print("Results:")
                 print("")
-                print(f"{Fore.YELLOW}Generated {Fore.RESET}-> {len(generated)}")
-                print(f"{Fore.RED}Invalid {Fore.RESET}-> {len(invalid)}")
-                print(f"{Fore.GREEN}Valid {Fore.RESET}-> {len(valid)}")
+                print(f"{Fore.YELLOW}GENRADOS {Fore.RESET}-> {len(generated)}")
+                print(f"{Fore.RED}INVALIDOS {Fore.RESET}-> {len(invalid)}")
+                print(f"{Fore.GREEN}VALIDOS {Fore.RESET}-> {len(valid)}")
                 print("")
                 os.system("pause")
                 TWISTX7()
